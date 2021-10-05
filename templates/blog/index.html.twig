@@ -10,6 +10,10 @@
 					<div class="article-card">
 						<img src="{{ asset('uploads/' ~ article.picture) }}" class="responsive-img">
 						<h2><a href="{{ path('article_show', {'url': article.url}) }}">{{ article.title }}</a></h2>
+						<div>
+						<span class="categories">{% for category in article.categories %} {{ category.label }}{{ loop.last ? '' : ',' }} {% endfor %}</span>
+						</div>
+						</br>
 						<span class="date">{{ article.publicationDate|date('d/m/Y') }}</span>
 					</div>
 				</div>
